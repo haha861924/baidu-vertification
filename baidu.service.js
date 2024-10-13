@@ -12,7 +12,10 @@ export async function start() {
   });
 
   const page = await browser.newPage();
-  await page.goto(crawler_path);
+  await page.goto(crawler_path, {
+    // timeout: 60000,
+    waitUntil: 'networkidle2'
+  });
 
   // do something with the page
   // e.g. get the title of the page

@@ -8,14 +8,11 @@ const port = 3000;
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
-
-  // after 5 seconds, start the baidu service
-  // setTimeout(baidu_start, 5000);
 })
 
-// cron job to run the baidu service every 10 seconds
-cron.schedule("*/10 * * * * *", () => {
-  console.log('running a task every 10 seconds');
-  // baidu_start();
+// cron job to run the baidu service every 120 seconds
+cron.schedule("*/120 * * * * *", () => {
+  console.log('running a task every 120 seconds');
+  baidu_start();
 });
 
