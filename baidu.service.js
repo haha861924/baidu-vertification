@@ -13,7 +13,7 @@ export async function start() {
 
   const page = await browser.newPage();
   await page.goto(crawler_path, {
-    // timeout: 60000,
+    timeout: 60000,
     waitUntil: 'networkidle2'
   });
 
